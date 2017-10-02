@@ -21,17 +21,15 @@ public class Main {
         point2.setYCoordinate(scanner.nextDouble());
 
         if (point1.getXCoordinate() < point2.getXCoordinate() && point1.getYCoordinate() != point2.getYCoordinate()) {
-            Rectangle rectangle = new Rectangle(point1.getXCoordinate(), point1.getYCoordinate(), point2.getXCoordinate(), point2.getYCoordinate());
-            System.out.println("If our two points are the coordinates of the opposite rectangle corners, its diagonal length would be: " + rectangle.rectangleDiagonalLength());
-            System.out.println("And this rectangle's area would be: " + rectangle.rectangleArea());
-            rectangle.print();
+            Rectangle rectangle = new Rectangle(point1, point2);
+            System.out.println("If our two points are the coordinates of the opposite rectangle corners, its diagonal length would be: " + rectangle.rectangleDiagonalLength(point1, point2));
+            System.out.println("And this rectangle's area would be: " + rectangle.rectangleArea(point1, point2));
         } else if (point1.getXCoordinate() > point2.getXCoordinate() && point1.getYCoordinate() != point2.getYCoordinate()) {
-            Rectangle rectangle = new Rectangle(point2.getXCoordinate(), point2.getYCoordinate(), point1.getXCoordinate(), point1.getYCoordinate());
-            System.out.println("If our two points are the coordinates of the opposite rectangle corners, its diagonal length would be: " + rectangle.rectangleDiagonalLength());
-            System.out.println("And this rectangle's area would be: " + rectangle.rectangleArea());
-            rectangle.print();
+            Rectangle rectangle = new Rectangle(point1, point2);
+            System.out.println("If our two points are the coordinates of the opposite rectangle corners, its diagonal length would be: " + rectangle.rectangleDiagonalLength(point1, point2));
+            System.out.println("And this rectangle's area would be: " + rectangle.rectangleArea(point1, point2));
         } else {
-            System.out.println("Distance between our two points is: " + Point.distance(point1.getXCoordinate(), point1.getYCoordinate(), point2.getXCoordinate(), point2.getYCoordinate()));
+            System.out.println("Distance between our two points is: " + point1.distance(point2));
         }
     }
 }

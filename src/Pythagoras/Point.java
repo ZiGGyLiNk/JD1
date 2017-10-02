@@ -12,13 +12,13 @@ class Point {
         this.yCoordinate = yCoordinate;
     }
 
-    double getXCoordinate() { return xCoordinate; }
-    double getYCoordinate() { return yCoordinate; }
+    public double getXCoordinate() { return xCoordinate; }
+    public double getYCoordinate() { return yCoordinate; }
 
-    void setXCoordinate(double xCoordinate) { this.xCoordinate = xCoordinate; }
-    void setYCoordinate(double yCoordinate) { this.yCoordinate = yCoordinate; }
+    public void setXCoordinate(double xCoordinate) { this.xCoordinate = xCoordinate; }
+    public void setYCoordinate(double yCoordinate) { this.yCoordinate = yCoordinate; }
 
-    static double distance(double xCoordinate, double yCoordinate, double xCoordinate2, double yCoordinate2) {
-        return Math.sqrt(Math.pow((xCoordinate2 - xCoordinate), 2) + Math.pow((yCoordinate2 - yCoordinate), 2));
+    public double distance(Point other) {
+        return Math.sqrt(Math.pow((other.getXCoordinate() - this.getXCoordinate()), 2) + Math.pow((other.getYCoordinate() - this.getYCoordinate()), 2));
     }
 }
